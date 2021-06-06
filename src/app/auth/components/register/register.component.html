@@ -1,0 +1,12 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <form [formGroup] = "regForm" (ngSubmit)="onSubmit()">
+                <input formControlName = "userName" type="text" placeholder="userName">
+                <input formControlName = "password" type="text" placeholder="password">
+                <input formControlName = "email" type="text" placeholder="email">
+            </form>
+            <button type="submit">Sign up</button>
+        </div>
+    </div>
+</div>
