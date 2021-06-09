@@ -3,10 +3,11 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Store, select } from '@ngrx/store';
 import { registerAction } from '../../store/actions/register.action';
 import { Observable, Subject } from 'rxjs';
-import { isSubmittingSelector } from '../../store/selectors';
+import { isSubmittingSelector, validationErrorsSelector } from '../../store/selectors';
 import { AuthService } from '../../services/auth.service';
 import { takeUntil } from 'rxjs/operators';
 import { RegisterRequestInterface } from '../../types/registerRequest.interface';
+import { BackendErrorsInterface } from 'src/app/shared/types/backendErrors.interface';
 
 @Component({
   selector: 'app-register',
@@ -22,6 +23,7 @@ export class RegisterComponent implements OnInit, OnDestroy {
     email: ['', [Validators.required, Validators.email]]
   });
   isSubmitting$: Observable<boolean> = this.store.pipe(select(isSubmittingSelector));
+  backendErrors$: Observable<BackendErrorsInterface | null> =  this.store.pipe(select(validationErrorsSelector));
 
   constructor(
     private fb: FormBuilder,
