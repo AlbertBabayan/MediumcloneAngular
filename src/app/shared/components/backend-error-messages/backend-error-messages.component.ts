@@ -11,6 +11,7 @@ export class BackendErrorMessagesComponent implements OnChanges {
 
   @Input() backendErrors: BackendErrorsInterface;
   errMessages: string[];
+
   constructor() { }
 
   ngOnChanges(): void {

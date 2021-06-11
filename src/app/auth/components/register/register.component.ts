@@ -23,13 +23,13 @@ export class RegisterComponent implements OnInit, OnDestroy {
     email: ['', [Validators.required, Validators.email]]
   });
   isSubmitting$: Observable<boolean> = this.store.pipe(select(isSubmittingSelector));
-  backendErrors$: Observable<BackendErrorsInterface | null> =  this.store.pipe(select(validationErrorsSelector));
+  backendErrors$: Observable<BackendErrorsInterface | null> = this.store.pipe(select(validationErrorsSelector));
 
   constructor(
     private fb: FormBuilder,
     private store: Store,
     private authSvc: AuthService
-    ) { }
+  ) { }
 
   ngOnInit(): void {
   }

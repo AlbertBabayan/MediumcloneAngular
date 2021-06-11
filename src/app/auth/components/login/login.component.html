@@ -1,0 +1,10 @@
+<div>
+    <div>
+        <app-backend-error-messages *ngIf="errors$ | async as backendErrors" [backendErrors]="backendErrors"></app-backend-error-messages>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <input formControlName="email" type="text" placeholder="Email">
+            <input formControlName="password" type="text" placeholder="password">
+            <button type="submit">Login</button>
+        </form>
+    </div>
+</div>

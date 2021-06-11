@@ -7,7 +7,7 @@ import { BackendErrorsInterface } from 'src/app/shared/types/backendErrors.inter
 
 export const registerAction = createAction(
     ActionTypes.REGISTER,
-    props<{ request: RegisterRequestInterface }>()
+    (data) => ({user: data})
 );
 export const registerSuccesAction = createAction(
     ActionTypes.REGISTER_SUCCES,

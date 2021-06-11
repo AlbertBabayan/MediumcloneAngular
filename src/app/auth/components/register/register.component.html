@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col">
             {{isSubmitting$ | async}}
-            <app-backend-error-messages *ngIf="backendErrors$ | async" [backendErrors]='backendErrors$ | async'>
+            <app-backend-error-messages *ngIf="backendErrors$ | async as backendErrors" [backendErrors]='backendErrors'>
             </app-backend-error-messages>
             <form [formGroup]="regForm" (ngSubmit)="onSubmit()">
                 <input formControlName="userName" type="text" placeholder="userName">
