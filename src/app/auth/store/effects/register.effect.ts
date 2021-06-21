@@ -15,7 +15,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class RegisterEffect {
     register$ = createEffect(() => this.actions$.pipe(              // stanum enq bolor action-nery
         ofType(registerAction),
-        switchMap((request) => {                                // switchMap-y petq e veradardzni action, aveli konkret dispatch e linum
+        switchMap((request) => {                                    // switchMap-y petq e veradardzni action, aveli konkret dispatch e linum
             return this.authSvc.register(request).pipe(             //
                 map((currentUser: CurrentUserInterface) => {        // succes, currentUser-y ekele servizic
                     this.presistantSvc.setToken('accesToken', currentUser.token);
