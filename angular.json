@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "mediumclone-angular"
+    }
+  },
+  "defaultProject": "mediumclone-angular",
+  "cli": {
+    "analytics": "0fb4162e-7813-4629-a3c7-0af07433be63"
+  }
 }
